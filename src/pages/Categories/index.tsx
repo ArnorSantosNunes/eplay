@@ -1,12 +1,5 @@
 import ProductsList from '../../components/ProductsList'
 
-import resident from '../../assets/images/resident.png'
-import diablo from '../../assets/images/diablo.png'
-import zelda from '../../assets/images/zelda.png'
-import starwars from '../../assets/images/star_wars.png'
-import { Game } from '../Home'
-import { useEffect, useState } from 'react'
-
 import {
   useGetActionGamesQuery,
   useGetFightGamesQuery,
@@ -17,10 +10,10 @@ import {
 
 const Categories = () => {
   const { data: actionGames } = useGetActionGamesQuery()
-  const { data: fightGames } = useGetActionGamesQuery()
-  const { data: rpgGames } = useGetActionGamesQuery()
-  const { data: simulationGames } = useGetActionGamesQuery()
-  const { data: sportGames } = useGetActionGamesQuery()
+  const { data: fightGames } = useGetFightGamesQuery()
+  const { data: rpgGames } = useGetRpgGamesQuery()
+  const { data: simulationGames } = useGetSimulationGamesQuery()
+  const { data: sportGames } = useGetSportGamesQuery()
 
   if (actionGames && fightGames && rpgGames && simulationGames && sportGames) {
     return (
